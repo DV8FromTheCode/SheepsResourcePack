@@ -1,0 +1,14 @@
+name: RCON
+on: [push]
+jobs:
+  rcon_test:
+    runs-on: ubuntu-latest
+    name: RCON
+    steps:
+      - name: RCON Connection
+        uses: Plagiatus/RCON-Action@v0.1
+        with:
+          server: ${{ secrets.rcon_server }}
+          port: ${{ secrets.rcon_port }}
+          password: ${{ secrets.rcon_password }}
+          commands: '["stop"]'
